@@ -1,0 +1,265 @@
+/*
+This CSS code styles a custom slider component with a responsive layout using Flexbox and Grid.
+It features a carousel of cards that adjusts to different screen sizes and includes hover effects, 
+dynamic transitions, and a unique design for buttons and links. The slider includes arrows for navigation 
+and custom scrollbar styling, enhancing user experience. The primary font used throughout is 'Roboto'.
+*/
+
+/* Import the Roboto font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* General styles for elements within the slider */
+.body-wrapper-slider > * {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Main wrapper styles for the slider */
+.body-wrapper-slider {
+  box-sizing: border-box !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 0 35px;
+  background: #161443;
+}
+
+/* Custom slider wrapper */
+.wrapper-custom-slider {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+
+/* Reset styles for the unordered list inside the slider */
+.wrapper-custom-slider ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation icon styles */
+.wrapper-custom-slider i {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Positioning for navigation icons */
+.wrapper-custom-slider i:first-child {
+  left: -50px;
+}
+.wrapper-custom-slider i:last-child {
+  right: -36px;
+}
+
+/* Unique carousel styles */
+.wrapper-custom-slider .unique-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 4) - 16px);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.unique-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card styles within the carousel */
+.unique-carousel .cards-carousel {
+  position: relative;
+  scroll-snap-align: start;
+  list-style-type: none;
+  background: #fff;
+  border-radius: 8px;
+  height: 342px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 15px;
+  transition: z-index 0.3s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Hover effect for cards */
+.cards-carousel::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(22, 20, 67, 0.623);
+  border-radius: 50%;
+  transition: 1s, top 0s, left 0s;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.cards-carousel:hover {
+  z-index: 10;
+}
+.cards-carousel:hover:before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Styles for dragging effect */
+.unique-carousel.dragging .cards-carousel {
+  cursor: grab;
+  user-select: none;
+}
+.unique-carousel.no-transition {
+  scroll-behavior: auto;
+}
+.unique-carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+/* Image styles within the cards */
+.cards-carousel .img img {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* Link styles */
+.cards-carousel .links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.cards-carousel .links a:visited {
+  color: #000;
+}
+
+/* Styles for the link container */
+.cards-carousel .links {
+  position: relative;
+  display: block;
+  background: #d4af50;
+  overflow: hidden;
+  transition: 1s all ease;
+  margin-top: 1rem;
+}
+
+/* Button styles */
+.cards-carousel .btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  border-radius: 15px 50px 30px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  z-index: 2;
+}
+
+/* Heading and link container styles */
+.unique-carousel .cards-carousel h2,
+.unique-carousel .cards-carousel .links {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card heading styles */
+.cards-carousel h2 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #161443;
+}
+
+/* Button link styles */
+.cards-carousel .btn a {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+}
+.cards-carousel .btn a:hover {
+  color: #fff !important;
+}
+
+/* Button background effect on hover */
+.cards-carousel .btn:before {
+  background-color: #161443;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+.cards-carousel .btn:hover {
+  background-color: #161443;
+}
+.cards-carousel .btn:before {
+  width: 100%;
+  height: 0;
+}
+.cards-carousel .btn:hover::before {
+  height: 100%;
+}
+.cards-carousel .btn:hover a {
+  color: #fff !important;
+  z-index: 3;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 990px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: calc((100% / 3) - 9px);
+  }
+  .cards-carousel h2 {
+    font-size: 1rem;
+  }
+  .wrapper-custom-slider i:first-child {
+    left: -38px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+  .wrapper-custom-slider i:first-child {
+    left: -38px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper-custom-slider .unique-carousel {
+    grid-auto-columns: 100%;
+  }
+  .cards-carousel .img img {
+    width: 180px;
+    height: 180px;
+  }
+}
