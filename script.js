@@ -20,7 +20,6 @@ const carouselItems = [
     alt: "David Weekley Homes",
     title: "David Weekley Homes",
   },
-  { imgSrc: "img/dr-horton.png", alt: "Dr Horton", title: "Dr Horton" },
   {
     imgSrc: "img/dream-finders-home.png",
     alt: "Dream Finders Home",
@@ -28,8 +27,88 @@ const carouselItems = [
   },
   {
     imgSrc: "img/homes-by-towne.png",
+    alt: "Dr Horton",
+    title: "Dr Horton",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
     alt: "Homes by Towne",
     title: "Homes by Towne",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Homes by Westbay",
+    title: "Homes by Westbay",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "John Cannon Homes",
+    title: "John Cannon Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "KB Home",
+    title: "KB Home",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Kolter Homes",
+    title: "Kolter Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Lee Wetherington",
+    title: "Lee Wetherington",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Lennar",
+    title: "Lennar",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Mattamy Homes",
+    title: "Mattamy Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Medallion Home",
+    title: "Medallion Home",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Meritage Homes",
+    title: "Meritage Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "MI Homes",
+    title: "MI Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Neal Communities",
+    title: "Neal Communities",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Pulte Homes",
+    title: "Pulte Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Ryan Homes",
+    title: "Ryan Homes",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Taylor Morrison",
+    title: "Taylor Morrison",
+  },
+  {
+    imgSrc: "img/homes-by-towne.png",
+    alt: "Toll Brothers",
+    title: "Toll Brothers",
   },
 ];
 
@@ -47,7 +126,7 @@ carouselItems.forEach((item) => {
     </div>
     <h2>${item.title}</h2>
     <div class="links btn">
-      <a href="#">View Floor Plans</a>
+      <a href="#">View Listings</a>
     </div>
   `;
 
@@ -123,13 +202,28 @@ autoPlay();
 // Function to apply the hover effect (circle on hover) on each card
 const applyHoverEffect = () => {
   cards.forEach((card) => {
+    // Mouse move event for desktop
     card.addEventListener("mousemove", (event) => {
       let rect = card.getBoundingClientRect();
       let x = event.clientX - rect.left;
       let y = event.clientY - rect.top;
-
       card.style.setProperty("--x", `${x}px`);
       card.style.setProperty("--y", `${y}px`);
+    });
+
+    // Touch start event for mobile
+    card.addEventListener("touchstart", (event) => {
+      let rect = card.getBoundingClientRect();
+      let x = event.touches[0].clientX - rect.left;
+      let y = event.touches[0].clientY - rect.top;
+      card.style.setProperty("--x", `${x}px`);
+      card.style.setProperty("--y", `${y}px`);
+      card.classList.add("hover"); // Add a class to trigger any additional hover styles if necessary
+    });
+
+    // Touch end event to remove hover styles
+    card.addEventListener("touchend", () => {
+      card.classList.remove("hover");
     });
   });
 };
