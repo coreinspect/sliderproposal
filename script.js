@@ -83,7 +83,7 @@ const applyHoverEffect = () => {
 
 // Apply the hover effect initially on page load
 applyHoverEffect();
-/*
+
 const infiniteScroll = () => {
   if (carouselJS.scrollLeft === 0) {
     carouselJS.classList.add("no-transition");
@@ -105,52 +105,6 @@ const infiniteScroll = () => {
   applyHoverEffect();
 };
 
-*/
-
-const infiniteScroll = () => {
-  // When the carousel reaches the beginning
-  if (carouselJS.scrollLeft <= 0) {
-    carouselJS.classList.add("no-transition");
-    // Scroll to just before the last set of cards to create a seamless loop
-    carouselJS.scrollLeft = carouselJS.scrollWidth - 2 * carouselJS.offsetWidth;
-    carouselJS.classList.remove("no-transition");
-  }
-  // When the carousel reaches the end
-  else if (
-    Math.ceil(carouselJS.scrollLeft + carouselJS.offsetWidth) >=
-    carouselJS.scrollWidth
-  ) {
-    carouselJS.classList.add("no-transition");
-    // Scroll to the start of the carousel, bypassing any gap that might cause a break
-    carouselJS.scrollLeft = carouselJS.offsetWidth;
-    carouselJS.classList.remove("no-transition");
-  }
-
-  // Stop the autoplay timeout if triggered
-  clearTimeout(timeoutId);
-
-  // Restart autoplay if the wrapper is not being hovered over
-  if (!wrapper.matches(":hover")) {
-    autoPlay();
-  }
-
-  // Reapply hover effect
-  applyHoverEffect();
-};
-
-// Box design circle
-cards.forEach((card) => {
-  card.addEventListener("mousemove", function (event) {
-    let rect = card.getBoundingClientRect(); // Get the position of the card relative to the viewport
-    let x = event.clientX - rect.left; // Calculate the x position inside the card
-    let y = event.clientY - rect.top; // Calculate the y position inside the card
-
-    // Set the CSS variables for the card
-    card.style.setProperty("--x", `${x}px`);
-    card.style.setProperty("--y", `${y}px`);
-  });
-});
-
 // Add event listeners for mouse interactions
 carouselJS.addEventListener("mousedown", dragStart);
 carouselJS.addEventListener("mousemove", dragging);
@@ -165,3 +119,16 @@ wrapper.addEventListener("mouseleave", autoPlay);
 carouselJS.addEventListener("touchstart", dragStart);
 carouselJS.addEventListener("touchmove", dragging);
 carouselJS.addEventListener("touchend", dragStop);
+
+// Box design circle
+cards.forEach((card) => {
+  card.addEventListener("mousemove", function (event) {
+    let rect = card.getBoundingClientRect(); // Get the position of the card relative to the viewport
+    let x = event.clientX - rect.left; // Calculate the x position inside the card
+    let y = event.clientY - rect.top; // Calculate the y position inside the card
+
+    // Set the CSS variables for the card
+    card.style.setProperty("--x", `${x}px`);
+    card.style.setProperty("--y", `${y}px`);
+  });
+});
