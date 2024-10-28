@@ -235,13 +235,13 @@ and custom scrollbar styling, enhancing user experience. The primary font used t
 /* Responsive adjustments */
 @media screen and (max-width: 990px) {
   .wrapper-custom-slider .unique-carousel {
-    grid-auto-columns: calc((100% / 3) - 9px);
+    grid-auto-columns: calc((100% / 3) - 12px);
   }
   .cards-carousel h2 {
     font-size: 1rem;
   }
   .wrapper-custom-slider i:first-child {
-    left: -38px;
+    left: -40px;
   }
 }
 
