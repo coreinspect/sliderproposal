@@ -1,112 +1,183 @@
 const carouselItems = [
-  { imgSrc: "img/adams-homes.png", alt: "Adams Home", title: "Adams Home" },
   {
-    imgSrc: "img/arthur-ruthenberg.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/adams-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043602",
+    alt: "Adams Home",
+    title: "Adams Home",
+  },
+  {
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/arthur-ruthenberg.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043625",
     alt: "Arthur Ruthenberg",
     title: "Arthur Ruthenberg",
   },
   {
-    imgSrc: "img/cardel-homes.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/cardel-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043626",
     alt: "Cardel Homes",
     title: "Cardel Homes",
   },
   {
-    imgSrc: "img/casa-fresca-homes.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/casa-fresca-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043629",
     alt: "Casa Fresca Homes",
     title: "Casa Fresca Homes",
   },
   {
-    imgSrc: "img/david-weekley-homes.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/david-weekley-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043636",
     alt: "David Weekley Homes",
     title: "David Weekley Homes",
   },
   {
-    imgSrc: "img/dream-finders-home.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/dream-finders-home.png",
+    urlSrc: "",
     alt: "Dream Finders Home",
     title: "Dream Finders Home",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/dr-horton.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043638",
     alt: "Dr Horton",
     title: "Dr Horton",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/homes-by-towne.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043658",
     alt: "Homes by Towne",
     title: "Homes by Towne",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/homes-by-westbay.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043656",
     alt: "Homes by Westbay",
     title: "Homes by Westbay",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/john-cannon-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043659",
     alt: "John Cannon Homes",
     title: "John Cannon Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/kb-home.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043662",
     alt: "KB Home",
     title: "KB Home",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/kolter-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043663",
     alt: "Kolter Homes",
     title: "Kolter Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/lee-wetherington.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043668",
     alt: "Lee Wetherington",
     title: "Lee Wetherington",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/lennar.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043669",
     alt: "Lennar",
     title: "Lennar",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/mattamy-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043673",
     alt: "Mattamy Homes",
     title: "Mattamy Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/medallion-home.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043674",
     alt: "Medallion Home",
     title: "Medallion Home",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/meritage-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043679",
     alt: "Meritage Homes",
     title: "Meritage Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/mi-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043681",
     alt: "MI Homes",
     title: "MI Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/neal-communities.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043682",
     alt: "Neal Communities",
     title: "Neal Communities",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/pulte-homes.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043684",
     alt: "Pulte Homes",
     title: "Pulte Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/ryan-homes.png",
+    urlSrc: "",
     alt: "Ryan Homes",
     title: "Ryan Homes",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/taylor-morrison.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043685",
     alt: "Taylor Morrison",
     title: "Taylor Morrison",
   },
   {
-    imgSrc: "img/homes-by-towne.png",
+    imgSrc:
+      "https://assets.site-static.com/userfiles/571/image/listing/toll-brothers.png",
+    urlSrc:
+      "https://www.lwrhome.com/idx/results/?searchtype=2&searchid=6043687",
     alt: "Toll Brothers",
     title: "Toll Brothers",
   },
@@ -126,7 +197,7 @@ carouselItems.forEach((item) => {
     </div>
     <h2>${item.title}</h2>
     <div class="links btn">
-      <a href="#">View Listings</a>
+      <a href="${item.urlSrc}" target="_blank" rel="noopener">View Listings</a>
     </div>
   `;
 
@@ -191,7 +262,7 @@ const dragStop = () => {
 };
 
 const autoPlay = () => {
-  if (window.innerWidth < 800) return;
+  if (window.innerWidth < 400) return;
   timeoutId = setTimeout(() => {
     carouselJS.scrollLeft += firstCardWidth;
   }, 3500);
